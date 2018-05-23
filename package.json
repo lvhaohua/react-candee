@@ -1,0 +1,27 @@
+{
+  "name": "react-candee",
+  "version": "1.0.0",
+  "description": "A react framework that encapsulates the redux.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvhaohua/react-candee.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "react-router",
+    "candee",
+    "react-candee",
+    "framework"
+  ],
+  "author": "lvhaohua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvhaohua/react-candee/issues"
+  },
+  "homepage": "https://github.com/lvhaohua/react-candee#readme"
+}
