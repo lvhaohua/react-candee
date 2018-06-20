@@ -42,6 +42,15 @@ function asyncComponent(config) {
   return DynamicComponent;
 }
 
+const cached = {};
+
+function registerModel(modelRes) {
+  if (!cached[modelRes.name]) {
+    dynamicModel(modelRes);
+    cached[modelRes.name] = 1;
+  }
+}
+
 function dynamic(config) {
   const { model: resolveModel, component: resolveComponent } = config;
   return asyncComponent({
@@ -50,7 +59,7 @@ function dynamic(config) {
       const component = resolveComponent();
       const loadPromise = new Promise(resolve => {
         Promise.all([model, component]).then(([modelRes, compRes]) => {
-          if (model) dynamicModel(modelRes.default || modelRes);
+          if (modelRes) registerModel(modelRes.default || modelRes);
           resolve(compRes.default || compRes);
         });
       });
