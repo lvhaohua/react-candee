@@ -6,7 +6,11 @@ const Home = () => {
     <div className="home">
       WelCome~ please give me a star if you like "candee" ~~~ thanks ~~~
       <p>
-        <a href="https://github.com/lvhaohua/react-candee" target="_blank">
+        <a
+          href="https://github.com/lvhaohua/react-candee"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           to candee github
         </a>
       </p>

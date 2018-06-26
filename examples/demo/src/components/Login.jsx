@@ -8,7 +8,7 @@ import "./Login.css";
 
 const FormItem = Form.Item;
 
-class Login extends React.Component {
+class Login extends Component {
   componentWillReceiveProps(nextprops) {
     const { result } = nextprops.states;
     console.log(result);

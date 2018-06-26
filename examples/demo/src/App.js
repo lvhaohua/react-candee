@@ -3,7 +3,7 @@ import { Route, Router, Switch, dynamic } from "candee";
 import "./App.css";
 
 const Login = dynamic({
-  model: () => import("./models/login"),
+  model: () => [import("./models/login")],
   component: () => import("./components/Login")
 });
 

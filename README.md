@@ -109,7 +109,7 @@ export default () => (
 #### 7.dynamic
 ```js
   const routeConfig = {
-    model: () => import("./model/login"),
+    model: () => [import("./model/login"),import("./model/regist")],
     component: () => import("./routes/Login")
   };
   <Route path="/login" component={dynamic(routeConfig)} />

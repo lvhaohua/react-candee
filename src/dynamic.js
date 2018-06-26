@@ -55,12 +55,19 @@ function dynamic(config) {
   const { model: resolveModel, component: resolveComponent } = config;
   return asyncComponent({
     resolve: () => {
-      const model = typeof resolveModel === "function" ? resolveModel() : null;
+      const models = typeof resolveModel === "function" ? resolveModel() : [];
       const component = resolveComponent();
       const loadPromise = new Promise(resolve => {
-        Promise.all([model, component]).then(([modelRes, compRes]) => {
-          if (modelRes) registerModel(modelRes.default || modelRes);
-          resolve(compRes.default || compRes);
+        Promise.all([...models, component]).then(result => {
+          if (!models || !models.length) {
+            resolve(result[0].default || result[0]);
+          } else {
+            const len = models.length;
+            result.slice(0, len).forEach(m => {
+              registerModel(m.default || m);
+            });
+            resolve(result[len].default || result[len]);
+          }
         });
       });
       return loadPromise;
