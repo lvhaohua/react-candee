@@ -30,6 +30,6 @@ export default function defaults(opts = {}) {
   }
 
   Object.keys(opts).forEach(key => {
-    opts[key] = opts[key]
+    options[key] = opts[key]
   })
 }
