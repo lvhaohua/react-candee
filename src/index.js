@@ -7,7 +7,7 @@ import { actions } from "./actions";
 import render from "./render";
 import Router from "./router";
 import defaults from "./defaults";
-
+ 
 export default {
   model,
   actions,

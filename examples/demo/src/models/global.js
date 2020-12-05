@@ -1,5 +1,5 @@
 export default {
-  name: "global",
+  name: 'global',
 
   initialState: {
     loading: false
@@ -11,7 +11,5 @@ export default {
     }
   },
 
-  effects: {
-
-  }
+  effects: {}
 };
